@@ -1,0 +1,12 @@
+#cache
+__pycache__/
+
+#environment
+.env*
+
+#ignore env template
+!.env.template
+
+#build
+dist/
+build/

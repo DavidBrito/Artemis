@@ -1,6 +1,7 @@
 """Module provinding Hello_World Controller Methods"""
 
 from flask_restful import Resource
+from ..services.hello_world_service import HelloWorldService
 
 
 class HelloWorld(Resource):
@@ -9,4 +10,6 @@ class HelloWorld(Resource):
     def get(self):
         """GET Method that returns hello world"""
 
-        return {"hello": "world"}
+        response = HelloWorldService().execute()
+
+        return response

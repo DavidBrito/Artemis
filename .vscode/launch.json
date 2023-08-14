@@ -5,14 +5,15 @@
             "type": "python",
             "request": "launch",
             "module": "flask",
+            "cwd": "${workspaceFolder}/api",
             "env": {
-                "FLASK_APP": "api/server.py",
+                "FLASK_APP": "app:create_app('dev')",
                 "FLASK_DEBUG": "1"
             },
             "args": [
                 "run",
-                "--no-debugger",
-                "--no-reload"
+                "--debugger",
+                "--reload"
             ],
             "jinja": true,
             "justMyCode": true

@@ -233,3 +233,5 @@ python run.py
 python migrate.py db migrate
 python migrate.py db upgrade
 ```
+        Form.setWindowFlags(QtCore.Qt.FramelessWindowHint)
+        Form.setAttribute(QtCore.Qt.WA_TranslucentBackground)

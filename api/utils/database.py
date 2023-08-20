@@ -1,17 +1,28 @@
+import os
 import sqlite3
+from dotenv import load_dotenv
 
-__all__ = ["init_db"]
+load_dotenv()
 
-def init_db(app):
-    conn = sqlite3.connect(f"{app.config['APP_DIR']}/database.db")
+def init_db():
+    db_path = os.environ.get("DATABASE_PATH", "data/database.db")
+    controls_config_path = os.environ.get("SECURITY_CONTROLS_CONFIG", "config/security_controls_config.txt")
+    conn = sqlite3.connect(db_path)
     
-    _init_users(conn, app)
-    _init_controls(conn, app)
+    try:
+        _init_users(conn)
+    except Exception as e:
+        print(e)
+
+    try:
+        _init_controls(conn, controls_config_path)
+    except Exception as e:
+        print(e)
 
     conn.close()
 
 
-def _init_users(conn, app):
+def _init_users(conn):
     cursor = conn.cursor()
 
     cursor.execute('''
@@ -24,13 +35,13 @@ def _init_users(conn, app):
     ''')
 
     cursor.execute('''
-        INSERT OR IGNORE INTO users (username, password) VALUES (?, ?)
-    ''', ('admin', 'admin'))
+        INSERT OR IGNORE INTO users (id, username, password, email) VALUES (?, ?, ?, ?)
+    ''', ('1', 'admin', 'admin', 'admin@admin.com'))
 
     conn.commit()
 
 
-def _init_controls(conn, app):
+def _init_controls(conn, config_path):
     cursor = conn.cursor()
 
     cursor.execute('''
@@ -44,7 +55,7 @@ def _init_controls(conn, app):
         )
     ''')
 
-    with open(f"{app.config['APP_DIR']}/seeds/security_controls_config.txt", 'r') as file:
+    with open(config_path, 'r') as file:
         for line in file:
             control_data = line.strip().split(';')
             if len(control_data) == 5:

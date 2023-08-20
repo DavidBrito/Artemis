@@ -1,9 +1,16 @@
 import sqlite3
+import os
+
 
 class User:
     def __init__(self, user_id):
         self.id = user_id
-        self.conn = sqlite3.connect('database.db')
+        current_dir = os.getcwd()
+        print("Current Working Directory:", current_dir)
+
+        db_path = os.environ.get("DATABASE_PATH", "database.db")
+
+        self.conn = sqlite3.connect(db_path)
         self.cursor = self.conn.cursor()
 
     def __del__(self):

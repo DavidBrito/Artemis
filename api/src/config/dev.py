@@ -13,4 +13,3 @@ class Config:
 
     # JWT_SECRET_KEY = os.getenv("FLASK_JWT_SECRET_KEY")
     # SQLALCHEMY_DATABASE_URI = os.getenv("FLASK_SQLALCHEMY_DATABASE_URI")
-

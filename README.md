@@ -169,7 +169,7 @@ After=network.target
 User=root
 WorkingDirectory=/root/artemis/api
 Environment="PATH=/root/.asdf/installs/python/3.11.4/bin"
-ExecStart=/root/.asdf/installs/python/3.11.4/bin/gunicorn -b 127.0.0.1:5000 "server:create_app('default_config')"
+ExecStart=/root/.asdf/installs/python/3.11.4/bin/gunicorn -b 127.0.0.1:5000 "app:create_app('dev')"
 Restart=always
 
 [Install]
@@ -230,6 +230,6 @@ python run.py
 ## 3.2 Manage Database (Flask-Migrate)
 
 ```sh
-python migrate.py db migrate
-python migrate.py db upgrade
+flask db migrate
+flask db upgrade
 ```

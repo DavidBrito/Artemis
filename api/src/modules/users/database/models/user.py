@@ -1,7 +1,7 @@
 """Module provinding users models"""
 
 from datetime import datetime
-from app import db, ma
+from src.database.sqlalchemy import db, ma
 
 
 class User(db.Model):

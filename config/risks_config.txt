@@ -1,0 +1,5 @@
+1,Injection,Attacker can manipulate inputs to execute unintended commands or queries
+2,Broken Authentication,Weak authentication mechanisms could allow unauthorized access
+3,Sensitive Data Exposure,Inadequate protection of sensitive data leads to leaks
+4,XML External Entities (XXE),Improper processing of XML input can lead to data exposure
+5,Broken Access Control,Incorrect enforcement of access restrictions allows unauthorized actions

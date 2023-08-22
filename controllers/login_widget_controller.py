@@ -20,7 +20,8 @@ class LoginWidget(QtWidgets.QWidget, Ui_Form):
         self.main_window = None
 
         self.setupUi(self)
-        self.pushButton.clicked.connect(self.checkUser)
+        self.pushButton.clicked.connect(self.checkUser)        
+        self.lineEdit_2.returnPressed.connect(self.checkUser)
 
     def checkUser(self):
         username = self.lineEdit.text()
@@ -41,4 +42,3 @@ class LoginWidget(QtWidgets.QWidget, Ui_Form):
         self.hide()
         self.main_window = MainWindow()
         self.main_window.show()
-

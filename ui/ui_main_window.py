@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'templates/qtcharts.ui'
+# Form implementation generated from reading ui file 'ui/templates/ui_main_window.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
@@ -10,7 +10,6 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-import resources.icons_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -18,7 +17,6 @@ class Ui_MainWindow(object):
         MainWindow.resize(800, 600)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setStyleSheet("* {\n"
-"color: #fff;\n"
 "font-family: Arial;\n"
 "font-size: 12px;\n"
 "border: none;\n"
@@ -44,7 +42,7 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "#header_nav QPushButton {\n"
-"backgound-color: rgb(61, 80, 95);\n"
+"background-color: rgb(61, 80, 95);\n"
 "border-radius: 15px;\n"
 "border: 3px solid rgb(120,157,186);\n"
 "}\n"
@@ -147,12 +145,6 @@ class Ui_MainWindow(object):
         self.label_3 = QtWidgets.QLabel(self.frame_5)
         self.label_3.setObjectName("label_3")
         self.verticalLayout_3.addWidget(self.label_3)
-        self.label_5 = QtWidgets.QLabel(self.frame_5)
-        self.label_5.setObjectName("label_5")
-        self.verticalLayout_3.addWidget(self.label_5)
-        self.label_4 = QtWidgets.QLabel(self.frame_5)
-        self.label_4.setObjectName("label_4")
-        self.verticalLayout_3.addWidget(self.label_4)
         self.verticalLayout.addWidget(self.frame_5)
         self.horizontalLayout.addWidget(self.left_menu_widget)
         self.frame = QtWidgets.QFrame(self.centralwidget)
@@ -196,6 +188,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_6 = QtWidgets.QHBoxLayout(self.frame_10)
         self.horizontalLayout_6.setObjectName("horizontalLayout_6")
         self.label_7 = QtWidgets.QLabel(self.frame_10)
+        self.label_7.setAlignment(QtCore.Qt.AlignCenter)
         self.label_7.setObjectName("label_7")
         self.horizontalLayout_6.addWidget(self.label_7)
         self.horizontalLayout_4.addWidget(self.frame_10)
@@ -331,20 +324,20 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
+        self.stackedWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.app_label_2.setText(_translate("MainWindow", "QT CHARTS"))
-        self.pushButton.setText(_translate("MainWindow", "Percent Bar Chart"))
-        self.pushButton_3.setText(_translate("MainWindow", "Temperature Records"))
-        self.label_2.setText(_translate("MainWindow", "Support Me"))
-        self.label_3.setText(_translate("MainWindow", "Patreon"))
-        self.label_5.setText(_translate("MainWindow", "Subscribe"))
-        self.label_4.setText(_translate("MainWindow", "PayPal"))
+        self.app_label_2.setText(_translate("MainWindow", "ARTEMIS"))
+        self.pushButton.setText(_translate("MainWindow", "Page 1"))
+        self.pushButton_3.setText(_translate("MainWindow", "Page 2"))
+        self.label_2.setText(_translate("MainWindow", "David"))
+        self.label_3.setText(_translate("MainWindow", "Configuracoes"))
         self.label_6.setText(_translate("MainWindow", "MENU"))
         self.label_7.setText(_translate("MainWindow", "DASHBOARD"))
-        self.label_9.setText(_translate("MainWindow", "Percentage Bar Chart"))
-        self.label_10.setText(_translate("MainWindow", "Temperature Bar Chart"))
+        self.label_9.setText(_translate("MainWindow", "Page 2"))
+        self.label_10.setText(_translate("MainWindow", "Page 1"))
         self.label_8.setText(_translate("MainWindow", "Copyright"))
+import resources.icons_rc

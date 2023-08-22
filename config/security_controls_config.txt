@@ -1,15 +1,5 @@
-Insecure Data Storage;Are sensitive data securely stored?;Data Protection;5;Prevent
-Secure Configuration;Are security settings properly configured?;Configuration Management;4;Mitigate
-Input Validation;Are user inputs properly validated and sanitized?;Input Validation;5;Prevent
-Session Management;Is session information properly managed?;Session Management;4;Mitigate
-Authentication and Password Management;Is authentication secure?;Authentication;5;Prevent
-Error Handling and Logging;Are errors handled and logged securely?;Logging and Monitoring;4;Mitigate
-Data Protection;Is data protected during transit and storage?;Data Protection;5;Prevent
-Cryptography;Is cryptography properly implemented?;Cryptography;4;Mitigate
-Authorization;Is access control implemented correctly?;Access Controls;5;Prevent
-Configuration Management;Is software configuration properly managed?;Configuration Management;4;Mitigate
-Secure Communications;Are secure communication channels used?;Communication Security;5;Prevent
-Input and Output Validation;Are inputs and outputs properly validated?;Input Validation;4;Mitigate
-Access Control;Is access to resources controlled properly?;Access Controls;4;Mitigate
-Sensitive Data Exposure;Is sensitive data properly protected?;Data Protection;4;Mitigate
-Communication Security;Is data transmitted securely?;Communication Security;5;Prevent
+1,Input Validation,Are inputs properly validated to prevent attacks?,Validation,Input Security,OWASP-ASVS-5.1,Ensure all user inputs are validated and sanitized.
+2,Authentication Mechanism,How is user authentication managed?,Authentication,Authentication,OWASP-ASVS-2.1,Use strong authentication mechanisms to protect user accounts.
+3,Data Encryption,Is sensitive data properly encrypted?,Data Security,Encryption,OWASP-ASVS-4.2,Encrypt sensitive data at rest and in transit.
+4,Access Control,How is access to resources controlled?,Authorization,Access Control,OWASP-ASVS-2.2,Implement proper access controls to prevent unauthorized access.
+5,Logging and Monitoring,Are security events properly logged and monitored?,Logging,Monitoring,OWASP-ASVS-3.4,Implement logging and monitoring to detect and respond to security incidents.

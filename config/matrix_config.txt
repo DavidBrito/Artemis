@@ -1,0 +1,5 @@
+1,1,1,prevent,0.5
+2,2,2,mitigate,0
+3,3,1,prevent,1.0
+4,4,3,mitigate,0
+5,5,2,prevent,0.5

@@ -2,12 +2,10 @@
 
 from flask import Flask
 from flask_cors import CORS
-from flask_jwt_extended import JWTManager
 
 from src.routes_v1 import api_bp
 from src.database.sqlalchemy import init_database
-
-jwt = JWTManager()
+from src.utils import init_utilities
 
 
 def create_app(config_environment="dev"):
@@ -17,7 +15,7 @@ def create_app(config_environment="dev"):
     app.config.from_prefixed_env()
     app.config.from_object(f"src.config.{config_environment}.Config")
 
-    jwt.init_app(app)
+    init_utilities(app)
     init_database(app)
 
     app.register_blueprint(api_bp, url_prefix="/v1")

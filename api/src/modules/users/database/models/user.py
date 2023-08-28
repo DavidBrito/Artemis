@@ -9,8 +9,8 @@ class User(db.Model):
 
     __tablename__ = "users"
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(64), index=True)
-    email = db.Column(db.String(120), index=True, unique=True)
+    username = db.Column(db.String(64), index=True, unique=True, nullable=False)
+    email = db.Column(db.String(120), index=True, nullable=False)
     password = db.Column(db.String(128))
     created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     updated_at = db.Column(
@@ -31,3 +31,9 @@ class UserSchema(ma.SQLAlchemyAutoSchema):
 
         model = User
 
+    # id = ma.auto_field().Integer(dump_only=True)
+    # username = ma.auto_field().String(required=True)
+    # email = ma.auto_field().String(required=True)
+    # password = ma.auto_field().String(required=True)
+    # created_at = ma.auto_field().DateTime(required=True)
+    # updated_at = ma.auto_field().DateTime(required=True)

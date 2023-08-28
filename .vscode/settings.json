@@ -2,9 +2,7 @@
     "python.analysis.typeCheckingMode": "off",
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter",
-        "editor.formatOnSave": true
+        "editor.formatOnSave": true,
+        "editor.autoIndent": "full",
     },
-    "python.analysis.extraPaths": [
-        "./api/src"
-    ]
 }

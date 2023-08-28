@@ -10,9 +10,9 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 
 class Config:
-    """Dev config"""
+    """Prod config"""
 
     # JWT_SECRET_KEY = os.getenv("FLASK_JWT_SECRET_KEY")
-    # JWT_COOKIE_SECURE = os.getenv("FLASK_JWT_COOKIE_SECURE")
+    JWT_COOKIE_SECURE = os.getenv("FLASK_JWT_COOKIE_SECURE") == "False"
     JWT_TOKEN_LOCATION = json.loads(os.getenv("FLASK_JWT_TOKEN_LOCATION"))
     # SQLALCHEMY_DATABASE_URI = os.getenv("FLASK_SQLALCHEMY_DATABASE_URI")

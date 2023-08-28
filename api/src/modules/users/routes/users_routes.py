@@ -1,11 +1,12 @@
 """Module provinding users routes"""
 
 from flask import Blueprint
-from flask_restful import Api
-from ..controllers.hello_world import HelloWorld
+
+from src.errors.flask_restful_api import ExtendedAPI
+from ..controllers.users_controller import UsersController
 
 users_bp = Blueprint("users", __name__)
-users = Api(users_bp)
+users = ExtendedAPI(users_bp)
 
 """Routes"""
-users.add_resource(HelloWorld, "/")
+users.add_resource(UsersController, "/")
